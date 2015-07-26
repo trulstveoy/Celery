@@ -1,46 +1,28 @@
 ﻿using System.Collections.Generic;
+using System.Web.Http;
 using Data.Dto;
-using Microsoft.AspNet.Mvc;
+using ExcelImport;
+using System.Linq;
 
 namespace Web.Controllers
 {
-    [Route("api/[controller]")]
-    public class FoodController : Controller
+    public class FoodController : ApiController
     {
+        private static readonly List<Food> _foods;
+
+        static FoodController()
+        {
+            var importer = new Importer();
+            List<MainCategory> mainCategories;
+            List<SubCategory> subCategories;
+            importer.Import(out _foods, out mainCategories,  out subCategories);    
+        }
+
         // GET: api/food
         [HttpGet]
         public IEnumerable<Food> Get()
         {
-            return new[]
-            {
-                new Food {Category = "Fruit", Name="Banana"},
-                new Food {Category = "Meat", Name="Pork"},
-            };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return _foods.Take(10);
         }
     }
 }

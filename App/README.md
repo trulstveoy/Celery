@@ -1,0 +1,1 @@
+Get-ChildItem -Recurse .\jspm_packages\github\aurelia\*.d.ts | Copy-Item -Destination dts\aurelia
