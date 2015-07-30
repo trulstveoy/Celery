@@ -11,7 +11,7 @@ namespace Web.Controllers
     {
         // GET: api/food
         [HttpGet]
-        public async Task<IEnumerable<Food>> Get(string query)
+        public async Task<IEnumerable<Food>> Get(string query) //
         {
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
             var database = client.GetDatabase("celery");
