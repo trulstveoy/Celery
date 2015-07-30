@@ -1,4 +1,4 @@
-﻿namespace ExcelImport
+﻿namespace RawImport
 {
     public class FoodRow
     {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Data.Dto
+﻿namespace Data.Dto
 {
     public class Food
     {

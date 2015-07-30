@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -21,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,8 +43,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.0.1\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.0.1\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.0.1\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,11 +99,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="build\args.js" />
+    <Content Include="build\paths.js" />
+    <Content Include="build\tasks\build.js" />
+    <Content Include="build\tasks\clean.js" />
+    <Content Include="build\tasks\dev.js" />
+    <Content Include="build\tasks\doc.js" />
+    <Content Include="build\tasks\e2e.js" />
+    <Content Include="build\tasks\prepare-release.js" />
+    <Content Include="build\tasks\test.js" />
+    <Content Include="build\tasks\watch.js" />
+    <Content Include="config.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="gulpfile.js" />
+    <Content Include="index.html" />
+    <Content Include="src\admin.html" />
+    <Content Include="src\app.html" />
+    <Content Include="src\nav-bar.html" />
+    <Content Include="src\search.html" />
+    <Content Include="styles\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -86,6 +132,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="doc\api.json" />
+    <Content Include="doc\CHANGELOG.md" />
+    <Content Include="README.md" />
+    <Content Include="package.json" />
+    <Content Include=".settings\settings.json" />
+    <Content Include=".settings\tasks.json" />
+    <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -107,11 +160,77 @@
       <Name>RawImport</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="dts\aurelia\aurelia-animator-css.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-binding.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-dependency-injection.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-event-aggregator.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-framework.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-history-browser.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-history.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-http-client.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-loader-default.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-loader.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-logging-console.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-logging.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-metadata.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-path.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-route-recognizer.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-router.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-task-queue.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-templating-binding.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-templating.d.ts" />
+    <TypeScriptCompile Include="dts\core.js.d.ts" />
+    <TypeScriptCompile Include="dts\data.d.ts" />
+    <TypeScriptCompile Include="dts\es6.d.ts" />
+    <TypeScriptCompile Include="dts\reflect-metadata.d.ts" />
+    <TypeScriptCompile Include="src\admin.ts" />
+    <TypeScriptCompile Include="src\animation-main.ts" />
+    <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\nav-bar.ts" />
+    <TypeScriptCompile Include="src\search.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Any CPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+    <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Any CPU'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+    <TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
+    <TypeScriptEmitDecoratorMetadata>true</TypeScriptEmitDecoratorMetadata>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
@@ -137,6 +256,15 @@
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-  </Target>
+  </Target>  
   -->
+  <Target Name="PreComputeCompileTypeScript">
+    <Message Text="Skipping PreComputeCompileTypeScript" />
+  </Target>
+  <Target Name="CompileTypeScript">
+    <Message Text="Skipping CompileTypeScript" />
+  </Target>
+  <Target Name="GetTypeScriptCopyToOutputDirectoryItems">
+    <Message Text="Skipping GetTypeScriptCopyToOutputDirectoryItems" />
+  </Target>
 </Project>

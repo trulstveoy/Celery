@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using Data.Dto;
 using OfficeOpenXml;
 
-namespace ExcelImport
+namespace RawImport
 {
     public class Importer
     {
@@ -76,7 +77,10 @@ namespace ExcelImport
 
         private List<FoodRow> ReadFromExcel()
         {
-            using (var stream = new FileStream(Filename, FileMode.Open, FileAccess.Read))
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "RawImport.Matvaretabellen_2014_eng.xlsx";
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
                 var package = new ExcelPackage();
                 package.Load(stream);

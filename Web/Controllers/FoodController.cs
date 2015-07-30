@@ -1,28 +1,24 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Data.Dto;
-using ExcelImport;
-using System.Linq;
+using MongoDB.Driver;
 
 namespace Web.Controllers
 {
     public class FoodController : ApiController
     {
-        private static readonly List<Food> _foods;
-
-        static FoodController()
-        {
-            var importer = new Importer();
-            List<MainCategory> mainCategories;
-            List<SubCategory> subCategories;
-            importer.Import(out _foods, out mainCategories,  out subCategories);    
-        }
-
         // GET: api/food
         [HttpGet]
-        public IEnumerable<Food> Get()
+        public async Task<IEnumerable<Food>> Get(string query)
         {
-            return _foods.Take(10);
+            var client = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
+            var database = client.GetDatabase("celery");
+            var foodCollection = database.GetCollection<Food>("food");
+
+            var filter = Builders<Food>.Filter.Where(x => x.Name.Contains(query));
+            return await foodCollection.Find(filter).ToListAsync();
         }
     }
 }

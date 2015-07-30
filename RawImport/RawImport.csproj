@@ -49,9 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Matvaretabellen_2014_eng.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="Matvaretabellen_2014_eng.xlsx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
