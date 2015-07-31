@@ -1,9 +1,10 @@
 os: Visual Studio 2015
 
 install:
-  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-  - npm config set loglevel info
+  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%    
   - ps: .\Install-MongoDb-On-AppVeyor.ps1
+  - npm install -g gulp
+  - npm install -g jspm
 
 before_build:
   - nuget restore
