@@ -1,10 +1,11 @@
 os: Visual Studio 2015
 
 cache:
+  - C:\Users\appveyor\AppData\Roaming\npm\node_modules -> web\package.json  # global npm modules
+  - C:\Users\appveyor\AppData\Roaming\npm-cache -> web\package.json         # npm cache
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
-  - web\node_modules
-  - web\jspm_packages
-  - %APPDATA%\npm-cache             # npm cache
+  - web\node_modules -> web\package.json
+  - web\jspm_packages -> web\config.js
   
 services:
   - mongodb
