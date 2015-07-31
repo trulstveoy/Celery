@@ -8,4 +8,4 @@ before_build:
   - nuget restore
   
 after_build:
- - ps: .\gulp.ps1
+ - ps: .\jsbuild.ps1
