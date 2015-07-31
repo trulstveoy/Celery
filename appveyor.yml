@@ -1,5 +1,9 @@
 os: Visual Studio 2015
 
+environment:
+  github_token:
+    secure: BdKySTKbuABSFa1ar5ZQ2/Ud+WHNbmYHszUyd4twaqg=
+
 cache:
   - C:\Users\appveyor\AppData\Roaming\npm\node_modules -> web\package.json  # global npm modules
   - C:\Users\appveyor\AppData\Roaming\npm-cache -> web\package.json         # npm cache
@@ -14,6 +18,12 @@ install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
   - npm install -g jspm
+  - jspm config registries.github.timeouts.lookup 60
+  - jspm config registries.github.timeouts.build 120
+  - jspm config registries.github.remote https://github.jspm.io
+  - jspm config registries.github.auth $env:github_token 
+  - jspm config registries.github.maxRepoSize 0
+  - jspm config registries.github.handler jspm-github
 
 before_build:
   - nuget restore
