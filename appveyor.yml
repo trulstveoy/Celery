@@ -2,7 +2,7 @@ os: Visual Studio 2015
 
 install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-  - export npm_config_loglevel=info
+  - npm config set loglevel info
   - ps: .\Install-MongoDb-On-AppVeyor.ps1
 
 before_build:
