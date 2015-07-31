@@ -17,13 +17,9 @@ services:
 install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
-  - npm install -g jspm
-  - jspm config registries.github.timeouts.lookup 60
-  - jspm config registries.github.timeouts.build 120
-  - jspm config registries.github.remote https://github.jspm.io
+  - npm install -g jspm  
   - jspm config registries.github.auth $env:github_token 
-  - jspm config registries.github.maxRepoSize 0
-  - jspm config registries.github.handler jspm-github
+  
 
 before_build:
   - nuget restore
