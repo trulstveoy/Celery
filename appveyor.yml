@@ -1,8 +1,16 @@
 os: Visual Studio 2015
 
+cache:
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - web\node_modules
+  - web\jspm_packages
+  - %APPDATA%\npm-cache             # npm cache
+  
+services:
+  - mongodb
+
 install:
-  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%    
-  - ps: .\Install-MongoDb-On-AppVeyor.ps1
+  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
   - npm install -g jspm
 
