@@ -18,10 +18,13 @@ install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
   - npm install -g jspm  
-  - jspm config registries.github.auth %GITHUB_TOKEN%  
-
+  - jspm config registries.github.auth %GITHUB_TOKEN%
+    
 before_build:
   - nuget restore
+
+build:
+  parallel: true
   
 after_build:
  - ps: .\jsbuild.ps1
