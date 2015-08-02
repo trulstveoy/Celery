@@ -29,3 +29,13 @@ build:
   
 after_build:
  - ps: .\jsbuild.ps1
+ 
+deploy:
+  provider: WebDeploy
+  server: https://celery.scm.azurewebsites.net:443/msdeploy.axd?site=Celery
+  website: "Celery"
+  username: $Celery
+  password:
+    secure: 6YzI6R8tSEO3kfY1eUu/4T+nvFt8G160lI6kx3B08a+DPNW9P98frXN2df5PpHCKXvl0j82Eq8EUHuLAqO7Hmw==
+  ntlm: false
+  remove_files: false
