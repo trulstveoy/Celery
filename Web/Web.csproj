@@ -32,7 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
     <PublishDatabases>false</PublishDatabases>
     <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
   </PropertyGroup>
@@ -194,7 +194,6 @@
     <TypeScriptCompile Include="src\search.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\Celery.pubxml" />
     <None Include="Web.prod.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
