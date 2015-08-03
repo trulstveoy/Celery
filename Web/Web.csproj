@@ -274,6 +274,10 @@
     <Message Text="Skipping GetTypeScriptCopyToOutputDirectoryItems" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)afterbuild.bat "$(ProjectDir)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)buildweb.bat "$(ProjectDir)"</PreBuildEvent>
   </PropertyGroup>
 </Project>
