@@ -26,9 +26,6 @@ before_build:
 build:
   parallel: true
   publish_wap: true
-  
-after_build:
- - ps: .\jsbuild.ps1
  
 deploy:
   provider: WebDeploy

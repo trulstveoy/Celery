@@ -273,4 +273,7 @@
   <Target Name="GetTypeScriptCopyToOutputDirectoryItems">
     <Message Text="Skipping GetTypeScriptCopyToOutputDirectoryItems" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)afterbuild.bat "$(ProjectDir)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
