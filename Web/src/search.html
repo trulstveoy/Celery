@@ -1,0 +1,15 @@
+<template>
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <input type="text" value.bind="query" />
+
+        <table>
+            <tr repeat.for="food of foods">
+                <td>${food.mainCategory.name}</td>
+                <td>${food.subCategory.name}</td>
+                <td>${food.name}</td>
+                <td>${food.calories}</td>
+            </tr>
+        </table>
+    </section>
+</template>
