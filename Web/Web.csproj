@@ -119,6 +119,7 @@
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
+    <Content Include="parameters.xml" />
     <Content Include="src\admin.html" />
     <Content Include="src\app.html" />
     <Content Include="src\nav-bar.html" />
@@ -194,9 +195,6 @@
     <TypeScriptCompile Include="src\search.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web.prod.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <Content Include="Web.wpp.targets" />
   </ItemGroup>
   <PropertyGroup>

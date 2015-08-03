@@ -14,7 +14,7 @@ namespace Web.Controllers
         public async Task<IEnumerable<Food>> Get(string query) //
         {
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
-            var database = client.GetDatabase("celery");
+            var database = client.GetDatabase("MongoLab-c");
             var foodCollection = database.GetCollection<Food>("food");
 
             var filter = Builders<Food>.Filter.Where(x => x.Name.Contains(query));

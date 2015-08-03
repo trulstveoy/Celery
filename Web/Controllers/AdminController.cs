@@ -22,7 +22,7 @@ namespace Web.Controllers
             importer.Import(out foods, out mainCategories, out subCategories);
 
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
-            var database = client.GetDatabase("celery");
+            var database = client.GetDatabase("MongoLab-c");
             await database.DropCollectionAsync("food");
             var collection = database.GetCollection<Food>("food");
             await collection.InsertManyAsync(foods);
