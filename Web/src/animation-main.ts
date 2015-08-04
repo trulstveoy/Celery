@@ -1,7 +1,13 @@
-export function configure(aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .developmentLogging();
+import config from 'authConfig';
 
-  aurelia.start().then(a => a.setRoot());
+export function configure(aurelia) {
+    aurelia.use
+        .standardConfiguration()
+        .developmentLogging()
+        .plugin('paulvanbladel/aurelia-auth', (baseConfig) => {
+            baseConfig.configure(config);
+        })
+    ;
+
+    aurelia.start().then(a => a.setRoot());
 }

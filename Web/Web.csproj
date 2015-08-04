@@ -122,6 +122,8 @@
     <Content Include="parameters.xml" />
     <Content Include="src\admin.html" />
     <Content Include="src\app.html" />
+    <Content Include="src\login.html" />
+    <Content Include="src\logout.html" />
     <Content Include="src\nav-bar.html" />
     <Content Include="src\search.html" />
     <Content Include="styles\styles.css" />
@@ -166,6 +168,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="dts\aurelia\aurelia-animator-css.d.ts" />
+    <TypeScriptCompile Include="dts\aurelia\aurelia-auth.d.ts" />
     <TypeScriptCompile Include="dts\aurelia\aurelia-binding.d.ts" />
     <TypeScriptCompile Include="dts\aurelia\aurelia-dependency-injection.d.ts" />
     <TypeScriptCompile Include="dts\aurelia\aurelia-event-aggregator.d.ts" />
@@ -191,6 +194,9 @@
     <TypeScriptCompile Include="src\admin.ts" />
     <TypeScriptCompile Include="src\animation-main.ts" />
     <TypeScriptCompile Include="src\app.ts" />
+    <TypeScriptCompile Include="src\authConfig.ts" />
+    <TypeScriptCompile Include="src\login.ts" />
+    <TypeScriptCompile Include="src\logout.ts" />
     <TypeScriptCompile Include="src\nav-bar.ts" />
     <TypeScriptCompile Include="src\search.ts" />
   </ItemGroup>
