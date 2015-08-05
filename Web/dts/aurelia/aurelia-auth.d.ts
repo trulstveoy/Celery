@@ -2,4 +2,8 @@
     export class AuthService {
         
     }
+
+    export class AuthorizeStep {
+        
+    }
 }

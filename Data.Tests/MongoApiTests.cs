@@ -20,7 +20,7 @@ namespace Data.Tests
             food.Name = "Food1";
             food.Calories = "20";
 
-            await foodCollection.InsertOneAsync(food);
+            //await foodCollection.InsertOneAsync(food);
         }
     }
 }
