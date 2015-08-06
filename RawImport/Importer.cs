@@ -51,17 +51,7 @@ namespace RawImport
                     WaterGrams = foodRow.WaterGrams
                 });
             }
-
-            //var mainCategories = foodRows.Where(IsMainCategory).Select(ToMainCategory).ToList();
-            //var subCategories = foodRows.Where(IsSubCategory).Select(ToSubCategory).ToList();
-            //var products = foodRows.Where(x => !IsMainCategory(x) && !IsSubCategory(x)).Select(x => ToFood(x, mainCategories, subCategories)).ToList();
-
-
         }
-
-        
-
-        
 
         private bool IsSubCategory(string id)
         {
@@ -73,7 +63,6 @@ namespace RawImport
         {
             return !id.Contains('.');
         }
-
 
         private List<FoodRow> ReadFromExcel()
         {

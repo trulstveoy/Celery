@@ -30,6 +30,8 @@ configuration: Release
 build:
   parallel: true
   publish_wap: true
+
+test: off
  
 deploy:
   provider: WebDeploy
