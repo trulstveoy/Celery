@@ -6,7 +6,7 @@ namespace RawImport.Tests
 {
     public class ImporterTests
     {
-        [Fact]
+        //[Fact]
         public void Foo()
         {
             var importer = new Importer();
