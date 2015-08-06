@@ -1,4 +1,4 @@
 call npm install
+call flatten-packages
 call jspm install
 call gulp build
-rd /s /q %1node_modules
