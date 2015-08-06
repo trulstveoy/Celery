@@ -283,6 +283,6 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)buildweb.bat "$(ProjectDir)"</PreBuildEvent>
+    <PreBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)buildweb.bat $(ProjectDir)</PreBuildEvent>
   </PropertyGroup>
 </Project>
