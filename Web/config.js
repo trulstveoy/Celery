@@ -27,6 +27,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
+    "exceptionless/exceptionless.javascript": "github:exceptionless/exceptionless.javascript@1.0.0",
     "font-awesome": "npm:font-awesome@4.4.0",
     "paulvanbladel/aurelia-auth": "github:paulvanbladel/aurelia-auth@0.9.6",
     "github:aurelia/animator-css@0.13.0": {

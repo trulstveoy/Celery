@@ -48,6 +48,18 @@
     <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Exceptionless.Extras">
+      <HintPath>..\packages\Exceptionless.WebApi.3.1.1382\lib\net45\Exceptionless.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exceptionless.Portable">
+      <HintPath>..\packages\Exceptionless.Portable.3.1.1382\lib\net45\Exceptionless.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exceptionless.WebApi">
+      <HintPath>..\packages\Exceptionless.WebApi.3.1.1382\lib\net45\Exceptionless.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
@@ -199,6 +211,7 @@
     <TypeScriptCompile Include="dts\core.js.d.ts" />
     <TypeScriptCompile Include="dts\data.d.ts" />
     <TypeScriptCompile Include="dts\es6.d.ts" />
+    <TypeScriptCompile Include="dts\exceptionless.d.ts" />
     <TypeScriptCompile Include="dts\reflect-metadata.d.ts" />
     <TypeScriptCompile Include="src\admin.ts" />
     <TypeScriptCompile Include="src\animation-main.ts" />

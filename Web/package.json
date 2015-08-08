@@ -64,6 +64,7 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "core-js": "npm:core-js@^0.9.18",
       "css": "github:systemjs/plugin-css@^0.1.11",
+      "exceptionless/exceptionless.javascript": "github:exceptionless/exceptionless.javascript@^1.0.0",
       "font-awesome": "npm:font-awesome@^4.3.0",
       "paulvanbladel/aurelia-auth": "github:paulvanbladel/aurelia-auth@^0.9.6"
     },

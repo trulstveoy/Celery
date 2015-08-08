@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Exceptionless;
 
 namespace Web
 {
@@ -6,6 +7,8 @@ namespace Web
     {
         public static void Register(HttpConfiguration config)
         {
+            ExceptionlessClient.Default.RegisterWebApi(config);
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

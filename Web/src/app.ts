@@ -8,7 +8,7 @@ export class App {
     httpClientConfig;
 
     static inject = [HttpClientConfig];
-    constructor(httpClientConfig) {
+    constructor(httpClientConfig, exceptionless) {
         this.httpClientConfig = httpClientConfig;
     }
 
