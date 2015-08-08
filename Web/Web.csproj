@@ -132,6 +132,7 @@
     <Content Include="src\login.html" />
     <Content Include="src\logout.html" />
     <Content Include="src\nav-bar.html" />
+    <Content Include="src\profile.html" />
     <Content Include="src\search.html" />
     <Content Include="styles\styles.css" />
     <Content Include="Global.asax" />
@@ -206,6 +207,7 @@
     <TypeScriptCompile Include="src\login.ts" />
     <TypeScriptCompile Include="src\logout.ts" />
     <TypeScriptCompile Include="src\nav-bar.ts" />
+    <TypeScriptCompile Include="src\profile.ts" />
     <TypeScriptCompile Include="src\search.ts" />
   </ItemGroup>
   <ItemGroup>

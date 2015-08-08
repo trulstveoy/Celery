@@ -1,6 +1,8 @@
 ﻿var configForDevelopment = {
-
+    authHeader: 'Authorization',
+    authToken: 'Bearer',
     loginRedirect: '/#search',
+    profileUrl: '/api/auth/me',
 
     providers: {
         google: {
@@ -11,7 +13,10 @@
 };
 
 var configForProduction = {
+    authHeader: 'Authorization',
+    authToken: 'Bearer',
     loginRedirect: '/#search',
+    profileUrl: '/api/auth/me',
 
     providers: {
         google: {

@@ -18,4 +18,13 @@
     export interface SubCategory {
         name:string;
     }
+
+    export interface User {
+        id: string;
+        externalId: string;
+        firstName: string;
+        lastName: string;
+        providerName: string;
+        bearerToken: string;
+    }
 }

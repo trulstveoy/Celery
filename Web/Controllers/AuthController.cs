@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using Data.Dto;
-using MongoDB.Bson.IO;
 using MongoDB.Driver;
-using OAuth2.Client;
+using Newtonsoft.Json;
 using OAuth2.Client.Impl;
 using OAuth2.Configuration;
 using OAuth2.Infrastructure;
-using OAuth2.Models;
 using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace Web.Controllers
@@ -29,15 +28,16 @@ namespace Web.Controllers
         public async Task<HttpResponseMessage> PostGoogle(HttpRequestMessage request)
         {
             string json = await request.Content.ReadAsStringAsync();
-            var auth = Newtonsoft.Json.JsonConvert.DeserializeAnonymousType(json, new {Code = "", ClientId = "", RedirectUri = ""});
+            var auth = JsonConvert.DeserializeAnonymousType(json, new {Code = "", ClientId = "", RedirectUri = ""});
 
             var client = new GoogleClient(new RequestFactory(), new RuntimeClientConfiguration
             {
                 ClientId = auth.ClientId,
-                ClientSecret = System.Configuration.ConfigurationManager.AppSettings["GoogleSecret"],
+                ClientSecret = ConfigurationManager.AppSettings["GoogleSecret"],
                 RedirectUri = auth.RedirectUri
             });
 
+            var token = GetNewToken();
             User user;
             try
             {
@@ -50,7 +50,8 @@ namespace Web.Controllers
                     ExternalId = userInfo.Id,
                     FirstName = userInfo.FirstName,
                     LastName = userInfo.LastName,
-                    ProviderName = userInfo.ProviderName
+                    ProviderName = userInfo.ProviderName,
+                    BearerToken = token
                 };
             }
             catch (Exception ex)
@@ -62,22 +63,35 @@ namespace Web.Controllers
 
             var mongoClient = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
             var database = mongoClient.GetDatabase("MongoLab-c");
-            var userCollection = database.GetCollection<User>("food");
-
-            var filter = Builders<User>.Filter.Where(x => x.Id == user.Id);
-            var existingUser = await userCollection.Find(filter).FirstOrDefaultAsync();
-            if (existingUser == null)
-            {
-                await userCollection.InsertOneAsync(user);
-            }
-
-            var token = GetNewToken();
+            var userCollection = database.GetCollection<User>("user");
+            await userCollection.ReplaceOneAsync(item => item.Id == user.Id, user, new UpdateOptions {IsUpsert = true});
+           
             return request.CreateResponse(HttpStatusCode.OK, new
             {
-                Token = new {
-                    Id = token
-                }
+                Token = token
             });
+        }
+
+        [HttpGet]
+        [Route("me")]
+        public async Task<HttpResponseMessage> GetMe(HttpRequestMessage request)
+        {
+            IEnumerable<string> headerValues;
+            if (request.Headers.TryGetValues("Authorization", out headerValues))
+            {
+                var token = headerValues.First().Replace("Bearer", "").Trim();
+                var mongoClient = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
+                var database = mongoClient.GetDatabase("MongoLab-c");
+                var userCollection = database.GetCollection<User>("user");
+                var user = await userCollection.Find(item => item.BearerToken == token).FirstOrDefaultAsync();
+
+                if(user == null)
+                    throw new InvalidOperationException();
+
+                return request.CreateResponse(HttpStatusCode.OK, user);
+            }
+
+            return request.CreateResponse(HttpStatusCode.Unauthorized);
         }
 
         public static string GetNewToken()
@@ -120,14 +134,5 @@ namespace Web.Controllers
         }
 
 
-    }
-
-    public class User
-    {
-        public string Id { get; set; }
-        public string ExternalId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string ProviderName { get; set; }
     }
 }
