@@ -82,7 +82,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="OAuth2">
-      <HintPath>Bin\OAuth2.dll</HintPath>
+      <HintPath>..\packages\OAuth2.0.8.34\lib\OAuth2.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.104.0\lib\net4\RestSharp.dll</HintPath>
