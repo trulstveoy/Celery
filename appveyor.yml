@@ -18,8 +18,12 @@ install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
   - npm install -g jspm  
-  - npm install -g flatten-packages
+  - npm install -g flatten-packages  
   - jspm config registries.github.auth %GITHUB_TOKEN%
+  - jspm config registries.github.timeouts.lookup 300
+  - jspm config registries.github.timeouts.build 300
+  - jspm config registries.npm.timeouts.lookup 300
+  - jspm config registries.npm.timeouts.build 300  
     
 before_build:
   - nuget restore
