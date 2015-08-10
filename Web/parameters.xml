@@ -1,2 +1,5 @@
 ﻿<parameters>
+  <parameter name="GoogleSecret">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='GoogleSecret']/@value" />
+  </parameter>
 </parameters>
