@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -11,8 +12,10 @@ namespace Web.Controllers
     {
         // GET: api/food
         [HttpGet]
-        public async Task<IEnumerable<Food>> Get(string query) //
+        public async Task<IEnumerable<Food>> Get(string query) 
         {
+            if(string.IsNullOrWhiteSpace(query)) throw new ArgumentException("query");
+
             var client = new MongoClient(ConfigurationManager.AppSettings["MongoUri"]);
             var database = client.GetDatabase("MongoLab-c");
             var foodCollection = database.GetCollection<Food>("food");

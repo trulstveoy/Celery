@@ -145,7 +145,7 @@
     <Content Include="src\logout.html" />
     <Content Include="src\nav-bar.html" />
     <Content Include="src\profile.html" />
-    <Content Include="src\search.html" />
+    <Content Include="src\register.html" />
     <Content Include="styles\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -221,7 +221,7 @@
     <TypeScriptCompile Include="src\logout.ts" />
     <TypeScriptCompile Include="src\nav-bar.ts" />
     <TypeScriptCompile Include="src\profile.ts" />
-    <TypeScriptCompile Include="src\search.ts" />
+    <TypeScriptCompile Include="src\register.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.wpp.targets" />
