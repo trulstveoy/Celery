@@ -15,11 +15,12 @@
     <script src="config.js"></script>
 <script>
     System.import('exceptionless/exceptionless.javascript').then(function (exceptionless) {
-        var client = exceptionless.ExceptionlessClient.default;
-        client.config.apiKey = 'zsnUGmzifZbMYLMcUjZPdzB83Se7RxGD4wp4SuqS';
-        client.config.useDebugLogger();
-        
-        });
+        if (window.location.host !== "localhost") {
+            var client = exceptionless.ExceptionlessClient.default;
+            client.config.apiKey = 'zsnUGmzifZbMYLMcUjZPdzB83Se7RxGD4wp4SuqS';
+            client.config.useDebugLogger();
+        }
+    });
     System.import('aurelia-bootstrapper');
 </script>
 </body>

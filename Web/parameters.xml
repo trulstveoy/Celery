@@ -5,4 +5,7 @@
   <parameter name="MongoUri">
     <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='MongoUri']/@value" />
   </parameter>
+  <parameter name="EnableExceptionless">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/exceptionless/add[@apiKey='EnableExceptionless']/@value" />
+  </parameter>
 </parameters>
