@@ -5,6 +5,7 @@ environment:
     secure: BdKySTKbuABSFa1ar5ZQ2/Ud+WHNbmYHszUyd4twaqg=
   GoogleSecret:
     secure: m8iDWTbSxMJr72oSl0H11jP6j4xtH60htSwRx7xpki0=
+  MongoUri: mongodb://celery:celery@ds062807.mongolab.com:62807/MongoLab-c
 
 cache:
   - C:\Users\appveyor\AppData\Roaming\npm\node_modules -> web\package.json  # global npm modules

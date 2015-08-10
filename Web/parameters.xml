@@ -2,4 +2,7 @@
   <parameter name="GoogleSecret">
     <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='GoogleSecret']/@value" />
   </parameter>
+  <parameter name="MongoUri">
+    <parameterEntry kind="XmlFile" scope="\\web.config$" match="/configuration/appSettings/add[@key='MongoUri']/@value" />
+  </parameter>
 </parameters>
