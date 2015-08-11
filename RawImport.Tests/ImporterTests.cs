@@ -6,7 +6,7 @@ namespace RawImport.Tests
 {
     public class ImporterTests
     {
-        //[Fact]
+        [Fact]
         public void Foo()
         {
             var importer = new Importer();
@@ -14,6 +14,8 @@ namespace RawImport.Tests
             List<MainCategory> mainCategories;
             List<SubCategory> subCategories;
             importer.Import(out foods, out mainCategories, out subCategories);
+
+            Assert.True(foods.Count > 0);
         }
     }
 }

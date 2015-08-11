@@ -3,7 +3,13 @@
         <h2>Register food</h2>
         <input type="text" value.bind="query" />
 
-        <table>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Category</th>
+                <th>Sub category</th>
+                <th>Name</th>
+                <th>Calories / 100g</th>
+            </tr>
             <tr repeat.for="food of foods">
                 <td>${food.mainCategory.name}</td>
                 <td>${food.subCategory.name}</td>

@@ -39,8 +39,6 @@ build:
   parallel: true
   project: Celery.sln
   publish_wap: true
-
-test: off
  
 deploy:
   provider: WebDeploy

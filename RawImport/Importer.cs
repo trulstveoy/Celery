@@ -34,8 +34,8 @@ namespace RawImport
                 {
                     subCategories.Add(new SubCategory
                     {
-                        Id = foodRow.MainCategoryId,
-                        Name = foodRow.MainCategoryName
+                        Id = foodRow.SubCategoryId,
+                        Name = foodRow.SubCategoryName
                     });
                 }
 
