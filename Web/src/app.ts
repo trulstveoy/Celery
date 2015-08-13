@@ -1,5 +1,6 @@
-import 'bootstrap';
-import 'bootstrap/css/bootstrap.css!';
+//import 'jquery';
+//import 'bootstrap-sass';
+import './style.css!';
 import {AuthorizeStep} from 'paulvanbladel/aurelia-auth';
 import HttpClientConfig from 'paulvanbladel/aurelia-auth/app.httpClient.config';
 

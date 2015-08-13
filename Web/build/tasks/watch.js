@@ -14,4 +14,5 @@ function reportChange(event){
 gulp.task('watch', function() {
   gulp.watch(paths.source, ['build-system']).on('change', reportChange);
   gulp.watch(paths.html, ['build-html']).on('change', reportChange);
+  gulp.watch(paths.sassDir, ['build-sass']).on('change', reportChange);
 });

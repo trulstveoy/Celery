@@ -22,13 +22,14 @@ System.config({
     "aurelia-framework": "github:aurelia/framework@0.13.4",
     "aurelia-http-client": "github:aurelia/http-client@0.10.2",
     "aurelia-router": "github:aurelia/router@0.10.4",
-    "babel": "npm:babel-core@5.8.21",
+    "babel": "npm:babel-core@5.8.22",
     "babel-runtime": "npm:babel-runtime@5.8.20",
-    "bootstrap": "github:twbs/bootstrap@3.3.5",
+    "bootstrap-sass": "github:twbs/bootstrap-sass@3.3.5",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
-    "exceptionless/exceptionless.javascript": "github:exceptionless/exceptionless.javascript@1.0.0",
+    "exceptionless/exceptionless.javascript": "github:exceptionless/exceptionless.javascript@1.0.1",
     "font-awesome": "npm:font-awesome@4.4.0",
+    "jquery": "github:components/jquery@2.1.4",
     "paulvanbladel/aurelia-auth": "github:paulvanbladel/aurelia-auth@0.9.6",
     "github:aurelia/animator-css@0.13.0": {
       "aurelia-templating": "github:aurelia/templating@0.13.16"
@@ -44,7 +45,7 @@ System.config({
       "aurelia-framework": "github:aurelia/framework@0.13.4",
       "aurelia-history": "github:aurelia/history@0.6.1",
       "aurelia-history-browser": "github:aurelia/history-browser@0.6.2",
-      "aurelia-loader-default": "github:aurelia/loader-default@0.9.3",
+      "aurelia-loader-default": "github:aurelia/loader-default@0.9.4",
       "aurelia-logging-console": "github:aurelia/logging-console@0.6.1",
       "aurelia-router": "github:aurelia/router@0.10.4",
       "aurelia-templating": "github:aurelia/templating@0.13.16",
@@ -80,7 +81,7 @@ System.config({
       "aurelia-path": "github:aurelia/path@0.8.1",
       "core-js": "npm:core-js@0.9.18"
     },
-    "github:aurelia/loader-default@0.9.3": {
+    "github:aurelia/loader-default@0.9.4": {
       "aurelia-loader": "github:aurelia/loader@0.8.3",
       "aurelia-metadata": "github:aurelia/metadata@0.7.2"
     },
@@ -144,9 +145,6 @@ System.config({
       "aurelia-framework": "github:aurelia/framework@0.13.4",
       "aurelia-http-client": "github:aurelia/http-client@0.10.2",
       "aurelia-router": "github:aurelia/router@0.10.4"
-    },
-    "github:twbs/bootstrap@3.3.5": {
-      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:babel-runtime@5.8.20": {
       "process": "github:jspm/nodelibs-process@0.1.1"

@@ -139,6 +139,7 @@
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="parameters.xml" />
+    <None Include="sass\style.scss" />
     <Content Include="src\admin.html" />
     <Content Include="src\app.html" />
     <Content Include="src\login.html" />
