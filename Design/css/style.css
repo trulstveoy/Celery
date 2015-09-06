@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Droid Sans"), local("DroidSans"), url(//droid_sans.woff2) format("woff2");
+  unicode-range: U0-0FF, U131, U152-153, U2C 6, U2DA, U2DC, U2000-206F, U2074, U20AC, U2212, U2215, UE0FF, UEFFD, UF000; }
+
+body {
+  margin: 0;
+  font-family: "Droid Sans";
+  background-color: #CED9BC; }
+
+nav ul {
+  background-color: #ABC147;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  overflow: hidden;
+  list-style-type: none; }
+
+nav li {
+  display: inline-block; }
+
+nav a {
+  display: block;
+  width: 120px;
+  font-weight: bold;
+  color: #608D4E;
+  text-align: center;
+  padding: 4px;
+  text-decoration: none; }
