@@ -1,7 +1,7 @@
 ﻿var configForDevelopment = {
     authHeader: 'Authorization',
     authToken: 'Bearer',
-    loginRedirect: '/#search',
+    loginRedirect: '/#register',
     profileUrl: '/api/auth/me',
 
     providers: {
@@ -15,7 +15,7 @@
 var configForProduction = {
     authHeader: 'Authorization',
     authToken: 'Bearer',
-    loginRedirect: '/#search',
+    loginRedirect: '/#register',
     profileUrl: '/api/auth/me',
 
     providers: {
