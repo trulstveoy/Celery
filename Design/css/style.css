@@ -39,3 +39,15 @@ nav {
     color: #85794D; }
   nav a:active {
     color: purple; }
+
+section.host {
+  margin: 10px; }
+
+button {
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #ABC147;
+  color: #608D4E;
+  font-weight: bold;
+  padding: 3px;
+  width: 120px; }
