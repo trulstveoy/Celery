@@ -128,18 +128,14 @@
     <Content Include="build\paths.js" />
     <Content Include="build\tasks\build.js" />
     <Content Include="build\tasks\clean.js" />
-    <Content Include="build\tasks\dev.js" />
-    <Content Include="build\tasks\doc.js" />
-    <Content Include="build\tasks\e2e.js" />
-    <Content Include="build\tasks\prepare-release.js" />
-    <Content Include="build\tasks\test.js" />
     <Content Include="build\tasks\watch.js" />
     <Content Include="config.js" />
     <Content Include="favicon.ico" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="parameters.xml" />
-    <None Include="sass\style.scss" />
+    <Content Include="scss\droid_sans.woff2" />
+    <None Include="scss\style.scss" />
     <Content Include="src\admin.html" />
     <Content Include="src\app.html" />
     <Content Include="src\login.html" />
@@ -147,7 +143,6 @@
     <Content Include="src\nav-bar.html" />
     <Content Include="src\profile.html" />
     <Content Include="src\register.html" />
-    <Content Include="styles\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
