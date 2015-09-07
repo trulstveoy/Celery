@@ -1,0 +1,65 @@
+﻿$font-family: 'Droid Sans';
+
+$bodybg: #CED9BC;
+$buttonbg: #ABC147;
+$disabled-link: #95A65B;
+$nav-tab: #608D4E;
+$a: #26ADA1;
+$b: #85794D;
+$header: #3C5B45;
+
+html{
+  font-family: $font-family;
+  background-color: $bodybg;  
+}
+
+body{
+  margin:0
+}
+
+nav {  
+  background-color: $buttonbg;    
+  
+  ul {     
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;    
+    list-style-type: none;
+  }  
+  
+  i{        
+      color: $header;
+    }   
+
+  a {    
+    padding: 0.5rem;
+    display:flex;
+    align-items:flex-start;    
+    font-weight: bold;
+    color: $nav-tab;    
+    text-align: center;
+    text-decoration: none;    
+    &:hover {
+      color: $b;
+    }
+    span{
+      padding:0.6rem;
+    }
+  }     
+}
+
+section.host{
+  margin: 10px;
+}
+
+button{
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: $buttonbg;
+  color: $nav-tab;
+  font-weight: bold;
+  padding: 3px;
+  width: 120px;
+}

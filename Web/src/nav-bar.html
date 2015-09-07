@@ -1,38 +1,22 @@
 <template>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <i class="fa fa-home"></i>
-                <span>${router.title}</span>
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+    <nav role="navigation">
+        <div>
+            <ul>
+                <li><a href="/#"><i class="fa fa-leaf fa-3x"></i></a></li>
+                <li><a class="appTitle" href="/#"><span>Celery</span></a></li>
                 <li repeat.for="row of router.navigation | authFilter: isAuthenticated" class="${row.isActive ? 'active' : ''}">
-                    <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href.bind="row.href">${row.title}</a>
+                    <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href.bind="row.href"><span>${row.title}</span></a>
                 </li>
+                <!--<li show.bind="isAuthenticated"><a href="/#/profile"><span>Profile</span></a></li>-->
+                <li show.bind="isAuthenticated"><a href="/#/logout"><span>Logout</span></a></li>
+                <li show.bind="!isAuthenticated"><a href="/#/login"><span>Login</span></a></li>
             </ul>
 
-            <ul if.bind="!isAuthenticated" class="nav navbar-nav navbar-right">
-                <li><a href="/#/login">Login</a></li>
-                <li><a href="/#/signup">Sign up</a></li>
-            </ul>
-            <ul if.bind="isAuthenticated" class="nav navbar-nav navbar-right">
-                <li><a href="/#/profile">Profile</a></li>
-                <li><a href="/#/logout">Logout</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
+            <!--<ul class="nav navbar-nav navbar-right">
                 <li class="loader" if.bind="router.isNavigating">
                     <i class="fa fa-spinner fa-spin fa-2x"></i>
                 </li>
-            </ul>
+            </ul>-->
         </div>
     </nav>
 </template>

@@ -10,10 +10,7 @@ var assign = Object.assign || require('object.assign');
 
 var tsProject = ts.createProject('tsconfig.json');
 
-// transpiles changed es6 files to SystemJS format
-// the plumber() call prevents 'pipe breaking' caused
-// by errors from other gulp plugins
-// https://www.npmjs.com/package/gulp-plumber
+
 gulp.task('build-system', function () {
     return gulp.src([paths.source, paths.dtssource])
       .pipe(plumber())
@@ -29,14 +26,10 @@ gulp.task('build-html', function () {
       .pipe(gulp.dest(paths.output));
 });
 
-gulp.task('build-sass', function () {
+gulp.task('build-scss', function () {
     return gulp.src(paths.sassDir + '/**/*.scss')
         .pipe(plumber())
-        .pipe(sass({
-            includePaths: [
-                'jspm_packages/github/twbs/bootstrap-sass@3.3.5/assets/stylesheets'
-            ]
-        }))
+        .pipe(sass())
         .pipe(gulp.dest(paths.output));
 });
 
@@ -47,7 +40,7 @@ gulp.task('build-sass', function () {
 gulp.task('build', function (callback) {
     return runSequence(
       'clean',
-      ['build-system', 'build-html', 'build-sass'],
+      ['build-system', 'build-html', 'build-scss'],
       callback
     );
 });
