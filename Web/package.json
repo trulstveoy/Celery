@@ -38,8 +38,7 @@
     "typescript": "^1.5.3",
     "vinyl": "^0.5.0",
     "vinyl-fs": "^1.0.0",
-    "vinyl-paths": "^1.0.0",
-    "yargs": "^2.1.1"
+    "vinyl-paths": "^1.0.0"
   },
   "jspm": {
     "dependencies": {
