@@ -37,6 +37,7 @@ System.config({
     "paulvanbladel/aurelia-auth": "github:paulvanbladel/aurelia-auth@0.9.19",
     "traceur": "github:jmcriffey/bower-traceur@0.0.91",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.91",
+    "typescript": "npm:typescript@1.5.3",
     "github:aurelia/animator-css@0.16.0": {
       "aurelia-metadata": "github:aurelia/metadata@0.8.0",
       "aurelia-templating": "github:aurelia/templating@0.15.3"
@@ -221,6 +222,15 @@ System.config({
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
+    "github:jspm/nodelibs-buffer@0.1.0": {
+      "buffer": "npm:buffer@3.5.1"
+    },
+    "github:jspm/nodelibs-os@0.1.0": {
+      "os-browserify": "npm:os-browserify@0.1.2"
+    },
+    "github:jspm/nodelibs-path@0.1.0": {
+      "path-browserify": "npm:path-browserify@0.0.0"
+    },
     "github:jspm/nodelibs-process@0.1.2": {
       "process": "npm:process@0.11.2"
     },
@@ -235,6 +245,11 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
+    "npm:buffer@3.5.1": {
+      "base64-js": "npm:base64-js@0.0.8",
+      "ieee754": "npm:ieee754@1.1.6",
+      "is-array": "npm:is-array@1.0.1"
+    },
     "npm:core-js@0.9.18": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
@@ -246,8 +261,23 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:os-browserify@0.1.2": {
+      "os": "github:jspm/nodelibs-os@0.1.0"
+    },
+    "npm:path-browserify@0.0.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:typescript@1.5.3": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "os": "github:jspm/nodelibs-os@0.1.0",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "readline": "github:jspm/nodelibs-readline@0.1.0"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
