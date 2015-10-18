@@ -8,12 +8,7 @@ environment:
   MongoUri: mongodb://celery:celery@ds062807.mongolab.com:62807/MongoLab-c
   EnableExceptionless: true
 
-cache:
-  - C:\Users\appveyor\AppData\Roaming\npm\node_modules -> web\package.json  # global npm modules
-  - C:\Users\appveyor\AppData\Roaming\npm-cache -> web\package.json         # npm cache
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
-  - web\node_modules -> web\package.json
-  - web\jspm_packages -> web\package.js
+
   
 services:
   - mongodb
