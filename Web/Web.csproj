@@ -22,7 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
-    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -136,6 +136,7 @@
     <Content Include="parameters.xml" />
     <Content Include="scss\droid_sans.woff2" />
     <None Include="scss\style.scss" />
+    <Content Include="src\stuffs.html" />
     <Content Include="src\admin.html" />
     <Content Include="src\app.html" />
     <Content Include="src\login.html" />
@@ -151,6 +152,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\StuffsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -209,6 +211,7 @@
     <TypeScriptCompile Include="dts\es6.d.ts" />
     <TypeScriptCompile Include="dts\exceptionless.d.ts" />
     <TypeScriptCompile Include="dts\reflect-metadata.d.ts" />
+    <TypeScriptCompile Include="src\stuffs.ts" />
     <TypeScriptCompile Include="src\admin.ts" />
     <TypeScriptCompile Include="src\animation-main.ts" />
     <TypeScriptCompile Include="src\app.ts" />
