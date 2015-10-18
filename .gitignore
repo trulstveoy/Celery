@@ -7,6 +7,7 @@
 *.sln.docstates
 Web/src/**/*.map
 Web/src/**/*.js
+temp/**/*
 
 # Build results
 [Dd]ebug/

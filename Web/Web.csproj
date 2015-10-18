@@ -24,6 +24,7 @@
     <TargetFrameworkProfile />
     <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
     <IntermediateOutputPath>..\Temp</IntermediateOutputPath>
+    <AspnetCompileMergeIntermediateOutputPath>c:\projects\Celery\temp2</AspnetCompileMergeIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
