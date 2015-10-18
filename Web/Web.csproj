@@ -23,8 +23,6 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <TypeScriptToolsVersion>1.6</TypeScriptToolsVersion>
-    <IntermediateOutputPath>..\Temp</IntermediateOutputPath>
-    <AspnetCompileMergeIntermediateOutputPath>c:\projects\Celery\temp2</AspnetCompileMergeIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -308,4 +306,29 @@
   <PropertyGroup>
     <PreBuildEvent>if $(ConfigurationName) == Release $(ProjectDir)buildweb.bat $(ProjectDir)</PreBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PackagePath Condition=" '$(PackagePath)'=='' ">website</PackagePath>
+    <EnableAddReplaceToUpdatePacakgePath Condition=" '$(EnableAddReplaceToUpdatePacakgePath)'=='' ">true
+    </EnableAddReplaceToUpdatePacakgePath>
+    <PackageDependsOn>
+      $(PackageDependsOn);
+      AddReplaceRuleForAppPath;
+    </PackageDependsOn>
+  </PropertyGroup>
+  <Target Name="AddReplaceRuleForAppPath" Condition=" '$(EnableAddReplaceToUpdatePacakgePath)'=='true' ">
+    <PropertyGroup>
+      <_PkgPathFull>$([System.IO.Path]::GetFullPath($(WPPAllFilesInSingleFolder)))</_PkgPathFull>
+    </PropertyGroup>
+    <!-- escape the text into a regex -->
+    <EscapeTextForRegularExpressions Text="$(_PkgPathFull)">
+      <Output TaskParameter="Result" PropertyName="_PkgPathRegex" />
+    </EscapeTextForRegularExpressions>
+    <!-- add the replace rule to update the path -->
+    <ItemGroup>
+      <MsDeployReplaceRules Include="replaceFullPath">
+        <Match>$(_PkgPathRegex)</Match>
+        <Replace>$(PackagePath)</Replace>
+      </MsDeployReplaceRules>
+    </ItemGroup>
+  </Target>
 </Project>
