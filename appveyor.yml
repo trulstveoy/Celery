@@ -13,7 +13,7 @@ cache:
   - C:\Users\appveyor\AppData\Roaming\npm-cache -> web\package.json         # npm cache
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
   - web\node_modules -> web\package.json
-  - web\jspm_packages -> web\package.js
+  - web\jspm_packages -> web\package.json
   
 services:
   - mongodb
@@ -21,7 +21,6 @@ services:
 install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
-  - npm install jspm --save-dev
   - npm install -g flatten-packages  
   - jspm config registries.github.auth %GITHUB_TOKEN%
   - jspm config registries.github.timeouts.lookup 300
