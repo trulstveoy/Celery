@@ -159,8 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="doc\api.json" />
-    <Content Include="doc\CHANGELOG.md" />
     <Content Include="README.md" />
     <Content Include="package.json" />
     <Content Include=".settings\settings.json" />
