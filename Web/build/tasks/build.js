@@ -33,10 +33,6 @@ gulp.task('build-scss', function () {
         .pipe(gulp.dest(paths.output));
 });
 
-// this task calls the clean task (located
-// in ./clean.js), then runs the build-system
-// and build-html tasks in parallel
-// https://www.npmjs.com/package/gulp-run-sequence
 gulp.task('build', function (callback) {
     return runSequence(
       'clean',
