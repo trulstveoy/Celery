@@ -21,7 +21,7 @@ services:
 install:
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%  
   - npm install -g gulp
-  - npm install -g jspm@beta  
+  - npm install jspm --save-dev
   - npm install -g flatten-packages  
   - jspm config registries.github.auth %GITHUB_TOKEN%
   - jspm config registries.github.timeouts.lookup 300
