@@ -124,7 +124,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="build\args.js" />
     <Content Include="build\paths.js" />
     <Content Include="build\tasks\build.js" />
     <Content Include="build\tasks\clean.js" />
@@ -269,7 +268,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51619</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
