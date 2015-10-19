@@ -15,20 +15,20 @@
     "url": "https://github.com/trulstveoy/Celery"
   },
   "devDependencies": {
-    "aurelia-tools": "^0.1.3",
-    "del": "^1.1.0",
-    "deprecated": "0.0.1",
-    "gulp": "^3.8.10",
-    "gulp-changed": "^1.1.0",
-    "gulp-plumber": "^0.6.6",
+    "aurelia-tools": "^0.1.14",
+    "del": "^2.0.2",
+    "deprecated": "^0.0.1",
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.3.0",
-    "gulp-typescript": "^2.8.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.9.2",
     "gulp-util": "^3.0.6",
-    "object.assign": "^1.0.3",
-    "require-dir": "^0.1.0",
-    "run-sequence": "^1.0.2",
-    "typescript": "^1.5.3"
+    "object.assign": "^4.0.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.4",
+    "typescript": "^1.6.2"
   },
   "jspm": {
     "dependencies": {
