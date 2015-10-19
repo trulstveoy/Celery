@@ -1,4 +1,4 @@
-﻿declare module 'paulvanbladel/aurelia-auth' {
+﻿declare module 'aurelia-auth' {
 
     
 
@@ -11,7 +11,7 @@
     }
 }
 
-declare module 'paulvanbladel/aurelia-auth/app.httpClient.config' {
+declare module 'aurelia-auth/app.httpClient.config' {
 
     export default class HttpClientConfig {
         

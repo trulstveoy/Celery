@@ -1,4 +1,4 @@
-﻿import {AuthService} from 'paulvanbladel/aurelia-auth';
+﻿import {AuthService} from 'aurelia-auth';
 
 export class Profile{
     auth;

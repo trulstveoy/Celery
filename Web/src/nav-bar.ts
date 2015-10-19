@@ -1,6 +1,6 @@
 import {bindable } from 'aurelia-framework';
 import {inject} from 'aurelia-framework';
-import {AuthService} from 'paulvanbladel/aurelia-auth';
+import {AuthService} from 'aurelia-auth';
 
 export class NavBar {
     auth;

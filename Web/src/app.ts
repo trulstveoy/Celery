@@ -1,8 +1,8 @@
 //import 'jquery';
 //import 'bootstrap-sass';
 import './style.css!';
-import {AuthorizeStep} from 'paulvanbladel/aurelia-auth';
-import HttpClientConfig from 'paulvanbladel/aurelia-auth/app.httpClient.config';
+import {AuthorizeStep} from 'aurelia-auth';
+import HttpClientConfig from 'aurelia-auth/app.httpClient.config';
 
 export class App {    
     router:any;
